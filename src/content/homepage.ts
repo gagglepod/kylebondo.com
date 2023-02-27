@@ -1,17 +1,17 @@
 export const homepage = [
   {
-    title: "Blazingly Fast",
-    content: "The reason why I chose Astro is because it's blazingly fast. It's also a component-based framework, so you can easily reuse your components.",
-    icon: "charm:rocket",
+    title: "Semper Gumby",
+    content: "The best part of UX design is paper wireframing. It forces you to think about how real people will use it. Up until that wireframe becomes an actual prototype, it could be anything - it could even be a boat.",
+    icon: "mdi:send-outline",
   },
   {
-    title: "Easy to use",
-    content: "Need to use this template? Just clone it and start writing your content. No complicated setup, no complicated design.",
-    icon: "ph:code-bold",
+    title: "Ear Time",
+    content: "Podcasting is last free space for creative thought. It's extremely mobile, on-demand, sharable, and cancel-proof. And I love the challenge of crafting stories that tap into the most powerful graphics processor on the planet - the human imagination.",
+    icon: "mdi:wizard-hat",
   },
   {
-    title: "Free and Open Source",
-    content: "Found some issues or want to contribute? Feel free to open an issue or pull request on GitHub.",
-    icon: "charm:plant-pot",
+    title: "Make a Dent",
+    content: "The goal of any good thinker is to teach others how to think. This is the joy I find in deconstructing complex problems. I don't attack a problem with my mighty sledge, but instead create a thousand tiny hammers. Together, we can make a dent in the universe.",
+    icon: "mdi:anvil",
   },
 ];

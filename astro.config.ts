@@ -21,6 +21,7 @@ export default defineConfig({
         {
           default: "@layouts/Layout.astro",
           "pages/blog/**/*.mdx": "@layouts/BlogLayout.astro",
+          "pages/project/**/*.mdx": "@layouts/ProjectLayout.astro",
         },
       ],
       codeTitle,

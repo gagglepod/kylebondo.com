@@ -1,6 +1,6 @@
 {
-  "name": "no-fuss-astro",
-  "version": "1.0.0",
+  "name": "kylebondo.com",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",

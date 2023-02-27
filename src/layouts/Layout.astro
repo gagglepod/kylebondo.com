@@ -11,10 +11,10 @@ export interface Props {
 }
 
 const defaultMeta = {
-  title: "NoFuss Astro",
-  description: "No fuss Astro Template for Landing, Blog and Docs page. No complicated design and setup, just start editing.",
+  title: "Kyle Bondo | UX Designer (kylebondo.com)",
+  description: "I love user experience design, wicked design thinking, low-fidelity wireframing, podcasting, emerging technology, and leading teams excited in making a small dent in the universe.",
   image: "/banner.png",
-  imageAlt: "Mountain Logo with NoFuss",
+  imageAlt: "Mountain Logo with Kyle Bondo",
 };
 
 const { title = defaultMeta.title, description = defaultMeta.description, heroImage = defaultMeta.image, imageAlt = defaultMeta.imageAlt } = Astro.props as Props;
@@ -76,7 +76,7 @@ const classBody =
   </head>
   <body class={classBody}>
     <Header />
-    <main class="m-auto p-6 max-w-4xl md:p-8">
+    <main class="m-auto p-2 max-w-4xl md:p-3">
       <slot />
     </main>
     <ThemeToggle />

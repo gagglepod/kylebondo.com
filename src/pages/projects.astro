@@ -1,0 +1,28 @@
+---
+import Layout from "@layouts/Layout.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+interface Frontmatter {
+  title: string;
+  pubDate: string;
+  description: string;
+}
+const metadata = {
+  title: "Projects",
+  description: "KyleBondo.com Project Page.",
+};
+
+let projects = await Astro.glob<Frontmatter>("./project/*.mdx");
+    projects = projects.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+---
+
+<Layout {...metadata}>
+  <section>
+    <h1 class="sm:text-4xl text-3xl font-bold mb-6 dark:text-white">Projects</h1>
+    <p class="dark:text-zinc-300 mb-6">A collection of my designs, concepts, and experiments.</p>
+  </section>
+  <section>
+    <ul>
+      {projects.map((post) => <ProjectCard title={post.frontmatter.title} description={post.frontmatter.description} pubDate={post.frontmatter.pubDate} url={post.url} />)}
+    </ul>
+  </section>
+</Layout>
