@@ -1,29 +1,116 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = 'About';
-const description = 'About your blog.';
+const title = "About";
+const description = "About your blog.";
 const permalink = `${Astro.site.href}about`;
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink} current="about">
+<BaseLayout
+  title={title}
+  description={description}
+  permalink={permalink}
+  current="about"
+>
   <div class="container">
     <h1>About</h1>
     <figure class="about-image">
-      <img src="/assets/about-illustration.webp" alt="Illustration of a notebook" width="330">
-      <figcaption>
+      <img
+        src="/assets/kylebondo.com-profile-pic.webp"
+        width="400"
+        height="400"
+      />
+      <!-- <figcaption>
         Illustration by
-        <a href="https://icons8.com/illustrations/author/5c07e68d82bcbc0092519bb6" target="_blank" rel="noopener">Icons 8</a>
+        <a
+          href="https://icons8.com/illustrations/author/5c07e68d82bcbc0092519bb6"
+          target="_blank"
+          rel="noopener">Icons 8</a
+        >
         from
-        <a href="https://icons8.com/illustrations" target="_blank" rel="noopener">Ouch!</a>
-      </figcaption>
+        <a
+          href="https://icons8.com/illustrations"
+          target="_blank"
+          rel="noopener">Ouch!</a
+        >
+      </figcaption> -->
     </figure>
-    <p>Text placeholder via <a href="https://jeffsum.com/" target="_blank">Jeffsum</a>.</p>
-    <p>So you two dig up, dig up dinosaurs? What do they got in there? King Kong? My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard! Life finds a way. God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.</p>
-    <p>You really think you can fly that thing? You know what? It is beets. I've crashed into a beet truck. Forget the fat lady! You're obsessed with the fat lady! Drive us out of here! Is this my espresso machine? Wh-what is-h-how did you get my espresso machine?</p>
-    <p>Hey, you know how I'm, like, always trying to save the planet? Here's my chance. Hey, take a look at the earthlings. Goodbye! I was part of something special. Just my luck, no ice. You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager?</p>
-    <p>Jaguar shark! So tell me - does it really exist? This thing comes fully loaded. AM/FM radio, reclining bucket seats, and... power windows. Yes, Yes, without the oops! You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager?</p>
-    <p>Yes, Yes, without the oops! Do you have any idea how long it takes those cups to decompose. They're using our own satellites against us. And the clock is ticking. Do you have any idea how long it takes those cups to decompose. My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard!</p>
+    <p>
+      Hi, I'm <strong>Kyle</strong>. I'm a UX Designer, Software Engineer and
+      Podcaster based in Fort Worth, Texas. You can listen to me on <a
+        href="https://waryankee.com"
+        target="_blank">War Yankee</a
+      > or see some of my work on <a
+        href="https://github.com/gagglepod"
+        target="_blank">GitHub</a
+      >.
+    </p>
+    <p>
+      I love user experience design, wicked design thinking, low-fidelity
+      wireframing, podcasting, emerging technology, and leading teams excited in
+      making a small dent in the universe. My problem-solving skills were honed
+      from years of chaos management in the US Navy and parenting - both
+      surprisingly similar.
+    </p>
+    <p>
+      I've been podcasting for over 7 years now and have been working on
+      processes and software that simplify the complicated world of podcasting.
+      This inspired me to develop my first podcasting media platform called <em
+        ><a href="https://oncetold.us" target="_blank">Oncetold</a>
+      </em>, a simplified toolkit for building podcasts.
+    </p>
+    <p>
+      Before <a href="https://oncetold.us" target="_blank">Oncetold</a> was <em
+        >Gagglepod</em
+      >, a podcast design studio I co-founded with <a
+        href="https://createartpodcast.com"
+        target="_blank">Timothy Kimo Brien</a
+      >. Through Gagglepod we held hundreds of meetups and virtual coaching
+      seminars that taught new podcasters how to create shows, use audio
+      technology, and build good podcasts. Out of Gagglepod, Tim and I started <em
+        >Podwrecked</em
+      >, a podcast to help podcasters survive their podcast, and helped me
+      become a featured speaker at several conferences including <a
+        href="https://podfestexpo.com/"
+        target="_blank">Podfest Expo</a
+      >, <a href="https://podfestglobal.online/" target="_blank"
+        >Podcast Global</a
+      >, Independent Podcast Conference (ICON), <a
+        href="https://www.indiepodcon.com/"
+        target="_blank">Mid-Atlantic Podcast Conference (MAPCON)</a
+      >, <a href="https://galaxycon.com/pages/richmond" target="_blank"
+        >GalaxyCon</a
+      > and several <a href="https://central.wordcamp.org/" target="_blank"
+        >WordCamps</a
+      >. View several of my most recent talks on my <a
+        href="https://www.youtube.com/@gagglepod3628"
+        target="_blank">Gagglepod YouTube Channel</a
+      >.
+    </p>
+    <p>
+      Once upon a time, I took on the challenge to make an Audio Drama. The end
+      result was <a href="https://pausefordramaticeffect.com" target="_blank"
+        >PAUSE for Dramatic Effect</a
+      >, a 17-episode serial podcast that let me have fun with writing,
+      directing, producing, and even voice acting.
+    </p>
+    <p>
+      I am a big American Civil War enthusiast and created <a
+        href="https://waryankee.com"
+        target="_blank">War Yankee</a
+      >, a history podcast that explores the <em>Overland Campaign</em> of 1864,
+      as a way to explore the battlefields that surrounded my home in Fredericksburg,
+      Virginia.
+    </p>
+    <p>
+      Finally, I've founded a few small businesses in my day. One of these
+      companies was Reckoneer. I built Reckoneer from a blog into an outdoor
+      racing company, that taught new race directors the business of endurance
+      racing, race promotion and event production. It was through Reckoneer that
+      I started podcasting with the creation of my highly successful podcast <em
+        >Merchants of Dirt</em
+      >.
+    </p>
   </div>
 </BaseLayout>
 
@@ -35,7 +122,7 @@ const permalink = `${Astro.site.href}about`;
   }
 
   .about-image img {
-    border-radius: 8px;
+    border-radius: 2rem;
     margin-bottom: 1.5em;
   }
 
