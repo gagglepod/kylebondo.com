@@ -1,7 +1,18 @@
 ---
-import ThemeToggleButton from './ThemeToggleButton.svelte';
-const { current = '' } = Astro.props;
+import ThemeToggleButton from "./ThemeToggleButton.svelte";
+const { current = "" } = Astro.props;
 ---
+
+<nav>
+  <a class={current === "" ? "selected" : ""} href="/">home</a>
+  <a class={current === "about" ? "selected" : ""} href="/about">about</a>
+  <a class={current === "dents" ? "selected" : ""} href="/dents">dents</a>
+  <a class={current === "poetry" ? "selected" : ""} href="/poetry">poetry</a>
+  <a class={current === "eartime" ? "selected" : ""} href="/eartime">eartime</a>
+  <div class="theme-toggle-container">
+    <ThemeToggleButton client:load />
+  </div>
+</nav>
 
 <style>
   nav {
@@ -12,6 +23,7 @@ const { current = '' } = Astro.props;
     font-weight: 700;
     justify-content: flex-end;
     text-transform: uppercase;
+    font-size: 1.2rem;
   }
 
   a {
@@ -30,9 +42,9 @@ const { current = '' } = Astro.props;
   }
 
   a::before {
-    content: '';
+    content: "";
     position: absolute;
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -54,12 +66,3 @@ const { current = '' } = Astro.props;
     width: 75px;
   }
 </style>
-
-<nav>
-  <a class={current === "" ? "selected" : ""} href='/'>home</a>
-  <a class={current === "about" ? "selected" : ""} href='/about'>about</a>
-  <a class={current === "blog" ? "selected" : ""} href='/blog'>blog</a>
-  <div class="theme-toggle-container">
-    <ThemeToggleButton client:load />
-  </div>
-</nav>

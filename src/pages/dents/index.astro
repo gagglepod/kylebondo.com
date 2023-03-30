@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Dents";
+const description = "Latest articles.";
+const permalink = `${Astro.site.href}dents`;
+
+let allPosts = await Astro.glob("../../data/dents-posts/*.md");
+allPosts = allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.publishDate).valueOf() -
+    new Date(a.frontmatter.publishDate).valueOf()
+);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  permalink={permalink}
+  current="dents"
+>
+  <div class="container">
+    <h1>Dents</h1>
+    <p>
+      The goal of any good thinker is to teach others how to think. This is the
+      joy I find in deconstructing complex problems. I don't attack a problem
+      with my mighty sledge, but instead create a thousand tiny hammers.
+      Together, we can make a dent in the universe.
+    </p>
+    {
+      allPosts.map((post, index) => {
+        const href = `/dents/${post.file.split("/").pop().split(".").shift()}`;
+        return (
+          <div>
+            {index !== 0 && <hr />}
+            <div class="post-item">
+              <h2>
+                <a href={href}>{post.frontmatter.title}</a>
+              </h2>
+              <p>{post.frontmatter.description}</p>
+              <div class="post-item-footer">
+                <span class="post-item-date">
+                  — {post.frontmatter.publishDate}
+                </span>
+              </div>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  h2,
+  .post-item-footer {
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+  }
+
+  .post-item-date {
+    color: var(--text-secondary);
+    text-align: left;
+    text-transform: uppercase;
+    margin-right: 16px;
+  }
+
+  hr {
+    margin: 60px auto;
+  }
+</style>

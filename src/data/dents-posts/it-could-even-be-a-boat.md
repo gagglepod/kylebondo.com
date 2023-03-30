@@ -1,10 +1,10 @@
 ---
 title: It Could Even Be a Boat
-publishDate: 14 Oct 2021
+publishDate: 15 Oct 2021
 description: Paper is still the best part of UX design.
 ---
 
-![Sailboat being shipped overland](/assets/blog/kylebondo.com-semper-gumby-1200x750.png)
+![Sailboat being shipped overland](/assets/dents/kylebondo.com-semper-gumby-1200x750.png)
 
 Paper is still the best part of UX design.
 

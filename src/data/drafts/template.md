@@ -4,7 +4,7 @@ publishDate: 21 Oct 2021
 description: The best part of UX design is paper wireframing.
 ---
 
-<!-- ![Sailboat being shipped overland](/assets/blog/kylebondo.com-semper-gumby-1200x750.png) -->
+<!-- ![Sailboat being shipped overland](/assets/dents/kylebondo.com-semper-gumby-1200x750.png) -->
 
 The best part of UX design is paper wireframing. It forces you to think about how real people will use it. Up until that wireframe becomes an actual prototype, it could be anything - it could even be a boat.
 

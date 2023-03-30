@@ -1,10 +1,10 @@
 ---
 title: Snapping Snowboards
-publishDate: 15 Oct 2021
+publishDate: 16 Oct 2021
 description: An excellent-looking product does not equate to a good-quality product.
 ---
 
-![Snapped snowboard](/assets/blog/kylebondo.com-snapped-snowboard-1200x750.png)
+![Snapped snowboard](/assets/dents/kylebondo.com-snapped-snowboard-1200x750.png)
 
 I once worked at a ski factory.
 
