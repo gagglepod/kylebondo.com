@@ -12,29 +12,23 @@ export interface Props {
 const { title, description, permalink, current } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <BaseHead title={title} description={description} permalink={permalink} />
     <style>
-      /* Prevent flash of white during dark mode */
+      /* Apply default styles to prevent flash of white */
       html {
-        background-color: black;
-        color: white;
-        transition:
-          background-color 0.3s ease,
-          color 0.3s ease;
-      }
-
-      html:not(.dark) {
         background-color: white;
         color: black;
-      }
-
-      /* Apply transition to body for smooth color shift */
-      body {
         transition:
           background-color 0.3s ease,
           color 0.3s ease;
+      }
+
+      /* Dark mode styles */
+      html.dark {
+        background-color: black;
+        color: white;
       }
 
       /* Preload dark mode preference */
@@ -47,22 +41,41 @@ const { title, description, permalink, current } = Astro.props;
         background-color: black;
         color: white;
       }
-    </style>
-    <script>
-      // Immediately apply dark mode based on user's system preference
-      const prefersDarkMode = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      if (prefersDarkMode) {
-        document.body.classList.add("dark");
+
+      /* Hide body content until JS has processed theme */
+      body {
+        visibility: hidden;
       }
 
-      // Add class to trigger body transition once JS runs
-      window.addEventListener("load", function () {
-        document.body.classList.remove("no-js"); // Remove the no-js class after JS loads
+      /* Reveal the body content once JS finishes processing */
+      body.theme-loaded {
+        visibility: visible;
+      }
+    </style>
+
+    <script>
+      // Function to apply dark mode based on system preference
+      function applyDarkMode() {
+        const prefersDarkMode = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        if (prefersDarkMode) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
+
+      // Apply dark mode as soon as JS loads
+      window.addEventListener("DOMContentLoaded", function () {
+        // Apply theme and remove the "no-js" class to trigger visibility
+        applyDarkMode();
+        document.body.classList.remove("no-js"); // Remove no-js class
+        document.body.classList.add("theme-loaded"); // Make body visible once theme is loaded
       });
     </script>
   </head>
+
   <body class="no-js">
     <div class="layout">
       <Header current={current} />
