@@ -27,12 +27,6 @@ body {
   line-height: 1.6;
   background-color: var(--background-body);
   color: var(--text-main);
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-}
-
-body[data-transition="out"] {
-  opacity: 0;
 }
 
 h1,
