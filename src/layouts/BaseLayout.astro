@@ -1,7 +1,7 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 export interface Props {
   title: string;
@@ -11,21 +11,69 @@ export interface Props {
 }
 const { title, description, permalink, current } = Astro.props;
 ---
+
 <html lang="en">
-<head>
-  <BaseHead title={title} description={description} permalink={permalink} />
-</head>
-<body>
-  <div class="layout">
-    <Header current={current} />
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink} />
+    <style>
+      /* Prevent flash of white during dark mode */
+      html {
+        background-color: black;
+        color: white;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
 
-    <main>
-      <slot />
-    </main>
+      html:not(.dark) {
+        background-color: white;
+        color: black;
+      }
 
-    <Footer />
-  </div>
-</body>
+      /* Apply transition to body for smooth color shift */
+      body {
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+
+      /* Preload dark mode preference */
+      body.no-js {
+        background-color: white;
+        color: black;
+      }
+
+      body.no-js.dark {
+        background-color: black;
+        color: white;
+      }
+    </style>
+    <script>
+      // Immediately apply dark mode based on user's system preference
+      const prefersDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      if (prefersDarkMode) {
+        document.body.classList.add("dark");
+      }
+
+      // Add class to trigger body transition once JS runs
+      window.addEventListener("load", function () {
+        document.body.classList.remove("no-js"); // Remove the no-js class after JS loads
+      });
+    </script>
+  </head>
+  <body class="no-js">
+    <div class="layout">
+      <Header current={current} />
+
+      <main>
+        <slot />
+      </main>
+
+      <Footer />
+    </div>
+  </body>
 </html>
 
 <style>
